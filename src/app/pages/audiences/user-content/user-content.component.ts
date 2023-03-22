@@ -9,9 +9,7 @@ import { Component, Input } from "@angular/core";
 export class UserContentComponent {
   @Input() user: IUser;
 
-  constructor() {
-
-  }
+  constructor() { }
 
   get subtitle(): string {
     return `${new Date(this.user.created).toLocaleDateString('en-us', this.dateOptions)} - ${this.user.location}`

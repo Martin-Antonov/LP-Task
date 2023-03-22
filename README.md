@@ -1,27 +1,32 @@
-# LpTask
+# Leanplum Task by Martin Antonov
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+##Project deliverables
+1. Live preview can be seen here: To get a result very close to the provided image, feel free to zoom ~150-175%
+2. After cloning the project, type `npm install` and `ng serve` in the terminal. The web task should be running on  http://localhost:4200/
 
-## Development server
+## Task
+Implement the following layout with data, provided in the zip.  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Audiences page](task-audiences.png)
 
-## Code scaffolding
+## Implementation Overview
+The task is implemented with Angular. Some further notes below:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Visual Notes
+* The data is transformed a little, to conform to the Angular standards of writing - there is an interface, along with a mock-data function.
+* The data is converted to observable with 1s delay before "receiving" it, to mock a real http call.
+* A loading bar is displayed while the data is being "received".
+* Scrollbars have been added.
+* Light animations on hover have been added.
+* Nav menu for the campaigns, which I have found in the vue template. I presume this will be implemented in the future.
+* Favicon and page title have been changed. 
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Architectural decisions
+![Architecture](architecture.jpg)
+* The application is split into a few folders (src/app/...) 
+  * _/components_ - this is where generic components, not directly linked to a specific page would live. In this case the loading animation and nav bar
+  * _/pages_ - There are two pages - audiences and campaigns. All page specific components are nested within these folders
+  * _/services_ - where services for the specific pages are. There are interfaces and mock-data for each interface. 
+  * _shared_ - a set of global/util components, scss and, in the future, services. 
+* The colours are defined in a palette scss map to be easily extensible in the future. Same applies for the margins/paddings/
+* There is a generic component - page-layout (inside _/shared_), which defines the page layout slots - header, content and left-nav (for the list). My presumption is that other pages will have a similar layout, so with Angular's content projection there is no need to write almost any css in the pages' components.

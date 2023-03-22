@@ -4,7 +4,7 @@ const LOCATIONS = ['Sofia', 'San Francisco', 'Amsterdam', 'Singapore'];
 const YEAR_MS = 365 * 24 * 60 * 60 * 1000;
 
 export function getMockUsers(): Array<IUser> {
-  const NOW = Date.now()
+  const NOW = Date.now();
   return new Array(100).fill(0).map((_, i) => ({
     id: 'usr_' + i,
     isDeveloper: i % 5 === 0,

@@ -7,7 +7,5 @@ import { UserService } from "../../services/user/user.service";
   styleUrls: ['./audiences.component.scss']
 })
 export class AudiencesComponent {
-  constructor(public us: UserService) {
-
-  }
+  constructor(public us: UserService) { }
 }
