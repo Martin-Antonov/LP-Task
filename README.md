@@ -1,8 +1,9 @@
 # Leanplum Task by Martin Antonov
 
 ##Project deliverables
-1. Live preview can be seen here: To get a result very close to the provided image, feel free to zoom ~150-175%
-2. After cloning the project, type `npm install` and `ng serve` in the terminal. The web task should be running on  http://localhost:4200/
+1. Live preview deployed on Firebase here: https://leanplum-task.web.app/audiences
+2. To see a result very close to the provided image, feel free to zoom in to ~150-175%
+3. To run locally - after cloning the project, type `npm install` and `ng serve` in the terminal. The web task should be running on  http://localhost:4200/
 
 ## Task
 Implement the following layout with data, provided in the zip.  
