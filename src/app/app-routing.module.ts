@@ -5,15 +5,9 @@ import { CampaignsComponent } from "./pages/campaigns/campaigns.component";
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'bg', pathMatch: 'full'},
-  {
-    path: ':lang',
-    children: [
-      {path: '', redirectTo: 'audiences', pathMatch: 'full'},
-      {path: 'audiences', component: AudiencesComponent},
-      {path: 'campaigns', component: CampaignsComponent},
-    ]
-  }
+  {path: '', redirectTo: 'audiences', pathMatch: 'full'},
+  {path: 'audiences', component: AudiencesComponent},
+  {path: 'campaigns', component: CampaignsComponent},
 ];
 
 @NgModule({

@@ -1,1 +1,21 @@
-<p>audiences works!</p>
+<ng-container *ngIf="(us.users | async) as users; else loading">
+  <app-page-layout [title]="'Users in Audience'"
+                   [subtitle]="'Total Users - Showing ' + users.length +' matching users'">
+    <ng-container left-nav>
+      <app-user-select *ngFor="let user of users; index as i"
+                       [name]="user.id"
+                       [devices]="user.devices"
+                       [sessions]="user.sessions.length"
+                       [location]="user.location"
+                       [selected]="i=== us.selectedUserIndex"
+                       (click)="us.selectUser(i)">
+      </app-user-select>
+    </ng-container>
+    <ng-container main *ngIf="us.selectedUserIndex !== -1">
+      <app-user-content [user]=users[us.selectedUserIndex]></app-user-content>
+    </ng-container>
+  </app-page-layout>
+</ng-container>
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

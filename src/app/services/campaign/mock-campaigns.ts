@@ -1,6 +1,6 @@
-import { CampaignEntity, CampaignStatus } from "./CampaignEntity";
+import { CampaignStatus, ICampaign } from "./ICampaign";
 
-export const MOCK_CAMPAIGNS: Array<CampaignEntity> = [
+export const MOCK_CAMPAIGNS: Array<ICampaign> = [
   {
     id: 1,
     name: 'Cart Abandonment Campaign',

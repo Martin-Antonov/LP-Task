@@ -1,0 +1,58 @@
+@use 'functions' as lp;
+@import 'constants';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .header {
+    padding: 0 lp.get-spacing(l);
+    margin-bottom: lp.get-spacing(l);
+
+    h2 {
+      margin-bottom: lp.get-spacing(m);
+    }
+  }
+
+  .tiles {
+    display: flex;
+    gap: lp.get-spacing(l);
+    margin-top: lp.get-spacing(xl);
+  }
+
+  .attributes-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: lp.get-spacing(xl);
+
+    .att-header, .att-row {
+      display: flex;
+      width: 100%;
+      gap: lp.get-spacing(s);
+    }
+
+    .header-text {
+      color: lp.get-color(grays, 1)
+    }
+
+    .left, .right {
+      border-bottom: 1px solid lp.get-color(grays, 3);
+      padding: lp.get-spacing(l);
+    }
+
+    .left {
+      width: 30%;
+    }
+
+    .right {
+      width: 70%;
+    }
+
+    .rows-container {
+      height: 300px;
+      overflow-y: auto;
+    }
+  }
+}

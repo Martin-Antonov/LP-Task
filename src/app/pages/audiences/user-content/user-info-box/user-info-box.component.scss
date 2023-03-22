@@ -1,0 +1,23 @@
+@use 'functions' as lp;
+@import 'constants';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: lp.get-spacing(l);
+  width: 33.3%;
+  max-width: 300px;
+  gap: lp.get-spacing(m);
+  background-color: lp.get-color(grays, 2);
+  border-radius: $radius;
+
+  .title {
+    color: lp.get-color(grays, 1);
+    font-size: 12px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

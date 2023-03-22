@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-page-layout',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-layout.component.scss']
 })
 export class PageLayoutComponent {
-
+  @Input() title: string = '';
+  @Input() subtitle: string = ''
 }

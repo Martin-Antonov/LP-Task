@@ -1,0 +1,10 @@
+@use 'sass:map';
+@import 'constants';
+
+@function get-spacing($size: md) {
+  @return map.get($spacing, $size);
+}
+
+@function get-color($variant: grays, $color: 0) {
+  @return map.get($palette, $variant, $color);
+}

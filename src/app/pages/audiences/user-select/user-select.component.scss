@@ -1,0 +1,36 @@
+@use 'functions' as lp;
+@import 'constants';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  padding: lp.get-spacing(m) lp.get-spacing(l);
+  transition: background-color 0.3s;
+  overflow: hidden;
+  border-radius: $radius;
+
+  &.selected {
+    border: 1px solid lp.get-color(grays, 0);
+  }
+
+  &:hover {
+    background-color: lp.get-color(grays, 2);
+    cursor: pointer;
+  }
+
+  &.selected {
+    border: 1px solid lp.get-color(grays, 0);
+  }
+
+  .name {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .info {
+    font-size: 12px;
+    color: lp.get-color(grays, 1);
+  }
+}

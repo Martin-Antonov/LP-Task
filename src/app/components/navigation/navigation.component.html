@@ -1,0 +1,4 @@
+<nav>
+  <a [routerLink]="'/audiences'" [ngClass]="{'selected': isInAudiences}">Audiences</a>
+  <a [routerLink]="'/campaigns'" [ngClass]="{'selected': !isInAudiences}">Campaigns</a>
+</nav>

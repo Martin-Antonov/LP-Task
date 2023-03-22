@@ -1,1 +1,12 @@
-<p>page-layout works!</p>
+<div class="left">
+  <div class="title">
+    <h1>{{title}}</h1>
+    <h3>{{subtitle}}</h3>
+  </div>
+  <div class="left-nav">
+    <ng-content select=[left-nav]></ng-content>
+  </div>
+</div>
+<div class="main">
+  <ng-content select=[main]></ng-content>
+</div>

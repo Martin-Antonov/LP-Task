@@ -1,0 +1,20 @@
+<div class="header">
+  <h2>{{user.id}}</h2>
+  <h3>{{subtitle}}</h3>
+</div>
+<div class="tiles">
+  <app-user-info-box *ngFor="let boxInfo of boxesInfo" [title]="boxInfo.title"
+                     [subtitle]="boxInfo.subtitle"></app-user-info-box>
+</div>
+<div class="attributes-container">
+  <div class="att-header">
+    <div class="header-text left">Attribute</div>
+    <div class="header-text right">Value</div>
+  </div>
+  <div class="rows-container">
+    <div class="att-row" *ngFor="let pair of user.attributes | keyvalue">
+      <div class="left">{{pair.key}}</div>
+      <div class="right">{{pair.value}}</div>
+    </div>
+  </div>
+</div>
