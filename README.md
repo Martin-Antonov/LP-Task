@@ -16,18 +16,18 @@ The task is implemented with Angular. Some further notes below:
 ### Visual Notes
 * The data is transformed a little, to conform to the Angular standards of writing - there is an interface, along with a mock-data function.
 * The data is converted to observable with 1s delay before "receiving" it, to mock a real http call.
-* A loading bar is displayed while the data is being "received".
+* A loading spinner is displayed while the data is being "received".
 * Scrollbars have been added.
 * Light animations on hover have been added.
-* Nav menu for the campaigns, which I have found in the vue template. I presume this will be implemented in the future.
+* Nav menu and a separate page for the campaigns have been added. I presume the campaigns task is for future implementation
 * Favicon and page title have been changed. 
 
 ### Architectural decisions
 ![Architecture](architecture.jpg)
 * The application is split into a few folders (src/app/...) 
-  * _/components_ - this is where generic components, not directly linked to a specific page would live. In this case the loading animation and nav bar
+  * _/components_ - this is where generic ui components, not directly linked to a specific page would live. In this case the loading animation and nav bar
   * _/pages_ - There are two pages - audiences and campaigns. All page specific components are nested within these folders
   * _/services_ - where services for the specific pages are. There are interfaces and mock-data for each interface. 
   * _shared_ - a set of global/util components, scss and, in the future, services. 
 * The colours are defined in a palette scss map to be easily extensible in the future. Same applies for the margins/paddings/
-* There is a generic component - page-layout (inside _/shared_), which defines the page layout slots - header, content and left-nav (for the list). My presumption is that other pages will have a similar layout, so with Angular's content projection there is no need to write almost any css in the pages' components.
+* There is an abstract component - page-layout (inside _/shared_), which defines the page layout slots - header, content and left-nav (for the list). My presumption is that other pages will have a similar layout, so with Angular's content projection there is no need to write almost any css in the main pages' components.
